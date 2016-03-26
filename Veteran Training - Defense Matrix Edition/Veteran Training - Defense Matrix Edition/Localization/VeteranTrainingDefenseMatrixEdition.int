@@ -1,0 +1,44 @@
+;Place localized text in this file
+;---- BEGIN OTS / STAFFSLOT
+
+[VeteranTrainingUnlock X2SoldierUnlockTemplate]
+DisplayName="Veteran Training"
+Summary="Unlocks soldier slot to allow veterans to teach others."
+
+[OTSVeteranSlot X2StaffSlotTemplate]
+EmptyText="OPEN: VETERAN REQUIRED"
+BonusEmptyText="Train junior soldiers with an experienced one."
+BonusText="TEACHING"
+FilledText="%UNITNAME is now teaching in the Dfense Matrix!"
+LockedText="LOCKED: PURCHASE UPGRADE"
+
+[UIPersonnel_RMVeteran]
+m_strTitle=Veteran to Train Others
+EmptyListMessage=NO ELIGIBLE CANDIDATES
+
+
+[UIScreenListener_Facility_Academy__StaffSlot_RMVeteranTraining]
+strOfficerTrainButton=Train Veteran
+
+
+
+[UIFacility_RM_VeteranSlot]
+m_strTrainRMVeteranDialogTitle=USE VETERAN TO TRAIN?
+m_strTrainRMVeteranDialogText=Soldiers of sergeant rank or greater can teach junior soldiers at the Guerrilla Tactics School, increasing their experience when the session ends. They will be unavailable for field duty during the teaching process. Do you want to proceed?
+m_strStopTrainRMVeteranDialogTitle=STOP VETERAN TRAINING?
+m_strStopTrainRMVeteranDialogText=Do you want to stop %UNITNAME from training others?\n\nWARNING: All teaching progress will be lost.
+
+[UIAlert_RMVeteranTrainingComplete]
+m_strTrainingCompleteLabel=VETERAN TRAINING COMPLETED
+m_strTrainingComplete=This mentor has completed their teaching. The junior soldiers are one step closer to becoming like our experienced ones.
+m_strViewSoldier=VIEW SOLDIER
+m_strCarryOn=CARRY ON
+;---- END OTS / STAFFSLOT
+
+
+[MentorConfidence X2AbilityTemplate]
+LocFriendlyName="Mentor Confidence"
+LocLongDescription="Teaching junior personnel the finer points of tactical combat has given this soldier a boost in their confidence, and thus their Will."
+LocHelpText="Increases Will by 10"
+LocFlyOverText="Mentor Confidence"
+LocPromotionPopupText="<Bullet/> Mentor Confidence improves your soldier's overall will, giving them better psi defence along with a higher chance to bleed out.<br/>" 

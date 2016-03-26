@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Guid>5f948c93-3958-4639-9823-6d0363013f9e</Guid>
+    <Name>Veteran Training: Defense Matrix Edition</Name>
+    <Description>This allows you veteran soldiers to help fresh soldiers gain some more XP all the way to Sergeant rank. This uses the Defence Matrix instead of the GTS for compatibility with mods like the LW Officer Pack, though it will conflict with future mods that add another slot to the Defence Matrix.</Description>
+    <SteamPublishID>0</SteamPublishID>
+    <AssemblyName>Veteran Training - Defense Matrix Edition</AssemblyName>
+    <RootNamespace>Veteran Training - Defense Matrix Edition</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Content\" />
+    <Folder Include="Localization\" />
+    <Folder Include="Src\" />
+    <Folder Include="Src\VeteranTrainingDefenseMatrixEdition\" />
+    <Folder Include="Src\VeteranTrainingDefenseMatrixEdition\Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\XComMentorConfidence.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComRM_VeteranSlot.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Localization\VeteranTrainingDefenseMatrixEdition.int">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ReadMe.txt" />
+    <Content Include="ModPreview.jpg" />
+    <Content Include="Config\XComEditor.ini" />
+    <Content Include="Config\XComEngine.ini" />
+    <Content Include="Config\XComGame.ini" />
+    <Content Include="Localization\XComGame.int" />
+    <Content Include="Src\VeteranTrainingDefenseMatrixEdition\Classes\RM_OTS_Veteran_StaffSlot.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\VeteranTrainingDefenseMatrixEdition\Classes\UIAlert_RMVeteranTrainingComplete.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\VeteranTrainingDefenseMatrixEdition\Classes\UIFacilityStaffContainer_RM_OTS.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\VeteranTrainingDefenseMatrixEdition\Classes\UIFacility_RM_VeteranSlot.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\VeteranTrainingDefenseMatrixEdition\Classes\UIPersonnel_RMVeteran.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\VeteranTrainingDefenseMatrixEdition\Classes\UIScreenListener_Facility_Academy_StaffSlot_RMVeteranTraining.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\VeteranTrainingDefenseMatrixEdition\Classes\X2Ability_MentorConfidence.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\VeteranTrainingDefenseMatrixEdition\Classes\X2DownloadableContentInfo_VeteranTrainingDefenseMatrixEdition.uc" />
+    <Content Include="Src\VeteranTrainingDefenseMatrixEdition\Classes\XComGameState_HeadquartersProjectTrainRMVeteran.uc">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
+</Project>

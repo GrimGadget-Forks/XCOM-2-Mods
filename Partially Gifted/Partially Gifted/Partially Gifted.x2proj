@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Guid>81733eef-720a-4bd5-80e6-94767c70af30</Guid>
+    <Name>Partially Gifted</Name>
+    <Description>Enables soldiers of the four standard classes to earn a random Psi ability from the Psi Lab</Description>
+    <SteamPublishID>0</SteamPublishID>
+    <AssemblyName>Partially Gifted</AssemblyName>
+    <RootNamespace>Partially Gifted</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Content\" />
+    <Folder Include="Localization\" />
+    <Folder Include="Src\" />
+    <Folder Include="Src\PartiallyGifted\" />
+    <Folder Include="Src\PartiallyGifted\Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\XComPartiallyGifted.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Localization\PartiallyGifted.int">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ReadMe.txt" />
+    <Content Include="ModPreview.jpg" />
+    <Content Include="Config\XComEditor.ini" />
+    <Content Include="Config\XComEngine.ini" />
+    <Content Include="Config\XComGame.ini" />
+    <Content Include="Localization\XComGame.int" />
+    <Content Include="Src\PartiallyGifted\Classes\RM_PsiLab_VeteranSlot.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartiallyGifted\Classes\UIFacility_RM_PsiVeteranSlot.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartiallyGifted\Classes\UIFacility_StaffContainer_RM_PsiLab.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartiallyGifted\Classes\UIPersonnel_RMPsiVeteran.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartiallyGifted\Classes\UIScreenListener_Facility_PsiLab_PsiVeteranSlot.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartiallyGifted\Classes\UnitPsiUtilties.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartiallyGifted\Classes\X2DownloadableContentInfo_PartiallyGifted.uc" />
+    <Content Include="Src\PartiallyGifted\Classes\XComGameState_HeadquartersProjectPsiTrainRMVeteran.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartiallyGifted\Classes\XComGameState_Unit_Psi.uc">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
+</Project>

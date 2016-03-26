@@ -1,0 +1,28 @@
+[VeteranTrainingUnlock X2SoldierUnlockTemplate]
+DisplayName="Veteran Training"
+Summary="Unlocks soldier slot to allow veterans to teach others."
+
+[PsiVeteranSlot X2StaffSlotTemplate]
+EmptyText="OPEN: SOLDIER REQUIRED"
+BonusEmptyText="Learn psionics with a non psionic operative"
+BonusText="PSI-TRAINING"
+FilledText="%UNITNAME is now learning a psionic ability!"
+LockedText="LOCKED: PURCHASE UPGRADE"
+
+[UIPersonnel_RMPsiVeteran]
+m_strTitle=Veteran to learn Psionics
+EmptyListMessage=NO ELIGIBLE CANDIDATES
+
+
+[UIScreenListener_Facility_Academy__StaffSlot_RMVeteranTraining]
+strOfficerTrainButton=Train Leader
+
+
+
+[UIFacility_RM_PsiVeteranSlot]
+m_strTrainRMPsiVeteranDialogTitle=HAVE SOLDIER LEARN PSIONICS?
+m_strTrainRMPsiVeteranDialogText=Non psionic operatives can learn a random psionic ability at the psi lab. They will be unable to go on missions while doing so.
+m_strStopTrainRMPsiVeteranDialogTitle=STOP SOLDIER TRAINING?
+m_strStopTrainRMPsiVeteranDialogText=Do you want to stop %UNITNAME from learning a psionic ability?\n\nWARNING: All teaching progress will be lost.
+
+
