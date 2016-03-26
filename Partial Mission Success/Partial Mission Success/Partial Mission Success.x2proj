@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Guid>3197b2a2-5c20-4d95-8326-37c6a5e75278</Guid>
+    <Name>Partial Mission Success (No Override)</Name>
+    <Description>Allows for missions to be consider partially completed, giving you some of the rewards for completing the objective of the mission but not being able to secure the area. Essentially an attempt to allow for evac completions of missions without requiring the end user to do a major rebalancing of the game on their own.</Description>
+    <SteamPublishID>0</SteamPublishID>
+    <AssemblyName>Partial Mission Success</AssemblyName>
+    <RootNamespace>Partial Mission Success</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Content\" />
+    <Folder Include="Localization\" />
+    <Folder Include="Src\" />
+    <Folder Include="Src\PartialMissionSuccess\" />
+    <Folder Include="Src\PartialMissionSuccess\Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Localization\PartialMissionSuccess.int">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ReadMe.txt" />
+    <Content Include="ModPreview.jpg" />
+    <Content Include="Config\XComEditor.ini" />
+    <Content Include="Config\XComEngine.ini" />
+    <Content Include="Config\XComGame.ini" />
+    <Content Include="Localization\XComGame.int" />
+    <Content Include="Src\PartialMissionSuccess\Classes\RM_DropshipDebriefing_Modifier.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartialMissionSuccess\Classes\RM_PartialMissionSuccess_TemplateExchanger.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartialMissionSuccess\Classes\RM_StrategySoundManager_Modifier.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartialMissionSuccess\Classes\RM_TacticalSoundManager_Modifier.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartialMissionSuccess\Classes\RM_UIMissionSummary_Modifier.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartialMissionSuccess\Classes\RM_UIScreenListener_MissionSummary.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\PartialMissionSuccess\Classes\X2DownloadableContentInfo_PartialMissionSuccess.uc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
+</Project>

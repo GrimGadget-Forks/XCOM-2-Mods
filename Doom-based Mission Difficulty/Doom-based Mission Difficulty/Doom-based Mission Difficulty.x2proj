@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Guid>f49e19ab-7264-4ac3-b334-1ed8b9151580</Guid>
+    <Name>Avatar Project Influences Difficulty</Name>
+    <Description>By default, XCOM 2 has the vast majority of its missions function like they did in EU, increasing in difficulty as time passes.
+
+The only exception to this are the alien facility missions, which instead uses the Avatar Project's progress to derive its difficulty from.
+
+This mod makes it so all missions now use that form of difficulty calculation.</Description>
+    <SteamPublishID>0</SteamPublishID>
+    <AssemblyName>Doom-based Mission Difficulty</AssemblyName>
+    <RootNamespace>Doom-based Mission Difficulty</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Content\" />
+    <Folder Include="Localization\" />
+    <Folder Include="Src\" />
+    <Folder Include="Src\AvatarProjectInfluencesDifficulty\" />
+    <Folder Include="Src\AvatarProjectInfluencesDifficulty\Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\XComDoomDifficulty.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ReadMe.txt" />
+    <Content Include="ModPreview.jpg" />
+    <Content Include="Config\XComEditor.ini" />
+    <Content Include="Config\XComEngine.ini" />
+    <Content Include="Config\XComGame.ini" />
+    <Content Include="Localization\XComGame.int" />
+    <Content Include="Src\AvatarProjectInfluencesDifficulty\Classes\RM_DefaultMissionSources_TemplateExchanger.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\AvatarProjectInfluencesDifficulty\Classes\RM_FauxDarkEvent.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\AvatarProjectInfluencesDifficulty\Classes\X2DownloadableContentInfo_AvatarProjectInfluencesDifficulty.uc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
+</Project>

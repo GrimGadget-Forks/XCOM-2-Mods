@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Guid>85fefcc2-d95e-4dfc-8b5e-c6d36f4e6dd1</Guid>
+    <Name>AWC And Psi Lab Scientists</Name>
+    <Description>Should replace the engineer slots in those two rooms with scientist slots.</Description>
+    <SteamPublishID>0</SteamPublishID>
+    <AssemblyName>AWC and Psi Lab Scientists</AssemblyName>
+    <RootNamespace>AWC and Psi Lab Scientists</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Content\" />
+    <Folder Include="Localization\" />
+    <Folder Include="Src\" />
+    <Folder Include="Src\AWCAndPsiLabScientists\" />
+    <Folder Include="Src\AWCAndPsiLabScientists\Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReadMe.txt" />
+    <Content Include="ModPreview.jpg" />
+    <Content Include="Config\XComEditor.ini" />
+    <Content Include="Config\XComEngine.ini" />
+    <Content Include="Config\XComGame.ini" />
+    <Content Include="Localization\XComGame.int" />
+    <Content Include="Src\AWCAndPsiLabScientists\Classes\RM_AWCScreenListener.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\AWCAndPsiLabScientists\Classes\RM_AWCTemplateUpdater.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\AWCAndPsiLabScientists\Classes\RM_PsiScreenListener.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\AWCAndPsiLabScientists\Classes\RM_PsiTemplateUpdater.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\AWCAndPsiLabScientists\Classes\X2DownloadableContentInfo_AWCAndPsiLabScientists.uc" />
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
+</Project>
