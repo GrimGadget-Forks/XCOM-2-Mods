@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Guid>2dd9f227-175e-40ed-b4d7-6d6d4b331ba7</Guid>
+    <Name>Additional Mission Types</Name>
+    <Description>Adds in additional mission types that range from conforming to vanilla's designs to multi-objective missions to spice up your campaigns.
+
+Currently adds:
+
+Retailation Defence: The local resistance has managed to hold off ADVENT in time for XCOM to arrive, but have been whittled down to the last line of defence and down to only four members. Hold off ADVENT's siege long enough for the non-combatants to evacuate.</Description>
+    <SteamPublishID>0</SteamPublishID>
+    <AssemblyName>Additional Mission Types</AssemblyName>
+    <RootNamespace>Additional Mission Types</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Content\" />
+    <Folder Include="Localization\" />
+    <Folder Include="Src\" />
+    <Folder Include="Src\AdditionalMissionTypes\" />
+    <Folder Include="Src\AdditionalMissionTypes\Classes\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\XComHavenSiege.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComMissions.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\RM_Obj_NeutralizeVIP.umap">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\RM_Obj_TerrorDefence.umap">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\RM_SubSystem_RNF.umap">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Localization\XComGame.kor">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ReadMe.txt" />
+    <Content Include="ModPreview.jpg" />
+    <Content Include="Config\XComEditor.ini" />
+    <Content Include="Config\XComEngine.ini" />
+    <Content Include="Config\XComGame.ini" />
+    <Content Include="Localization\XComGame.int" />
+    <Content Include="Src\AdditionalMissionTypes\Classes\RM_DefaultMissionSources_TemplateExchanger.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\AdditionalMissionTypes\Classes\X2DownloadableContentInfo_AdditionalMissionTypes.uc" />
+    <Content Include="Src\AdditionalMissionTypes\Classes\X2MissionNarrative_TerrorDefence.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\AdditionalMissionTypes\Classes\X2MissionSet_TerrorDefence.uc">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
+</Project>
