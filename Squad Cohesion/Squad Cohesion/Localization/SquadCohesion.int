@@ -1,0 +1,44 @@
+[X2Ability_Camaraderie]
+AimBonus="+<amount/> Aim"
+CritBonus="+<amount/> Crit"
+WillBonus="+<amount/> Will"
+MobilityBonus="+<amount/> Mobility"
+HackingBonus="+<amount/> Hack"
+DodgeBonus="+<amount/> Dodge"
+ArmorBonus="+<amount/> Armor"
+DefenseBonus="+<amount/> Defense"
+
+[X2Ability_GuerillasInArms]
+AimBonus="+<amount/> Aim"
+CritBonus="+<amount/> Crit"
+WillBonus="+<amount/> Will"
+MobilityBonus="+<amount/> Mobility"
+HackingBonus="+<amount/> Hack"
+DodgeBonus="+<amount/> Dodge"
+ArmorBonus="+<amount/> Armor"
+DefenseBonus="+<amount/> Defense"
+
+[X2Ability_WeAreXCOM]
+AimBonus="+<amount/> Aim"
+CritBonus="+<amount/> Crit"
+WillBonus="+<amount/> Will"
+MobilityBonus="+<amount/> Mobility"
+HackingBonus="+<amount/> Hack"
+DodgeBonus="+<amount/> Dodge"
+ArmorBonus="+<amount/> Armor"
+DefenseBonus="+<amount/> Defense"
+
+[RM_SquadSelect_ScreenListener]
+m_strSquadCohesion="SQUAD COHESION LEVEL"
+m_strNoSquadCohesion="(Nothing in common)"
+m_strLowSquadCohesion="(Budding friendships)"
+m_strMedSquadCohesion="(Good friends)"
+m_strHighSquadCohesion="(Fellowship)"
+m_strNegiSquadCohesion="(Ehh about each other)"
+
+[RM_UIPersonnel_SquadSelect_ScreenListener]
+m_strCohesion="COHESION"
+m_strNoCohesion=": Who? "
+m_strLowCohesion=": Acquainted "
+m_strMedCohesion=": Friends "
+m_strHighCohesion=": Besties "
