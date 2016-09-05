@@ -1,0 +1,89 @@
+//in case this is ever relevant for the Non-Humanoid Animset Problem of XCOM 2
+
+if(UnitState.IsSoldier() && SpeciesTuple.NeedsAnimsets && UnitState.GetTeam() == eTeam_XCom)
+			{
+				WeaponTemplate = X2WeaponTemplate(ItemState.GetMyTemplate());
+
+				if(WeaponTemplate.WeaponCat == 'sword')
+				{
+					XComAddAnimSets(SpeciesTuple.SwordAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == 'rifle')
+				{
+					XComAddAnimSets(SpeciesTuple.RifleAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == 'sniper_rifle')
+				{
+					XComAddAnimSets(SpeciesTuple.SniperAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == 'shotgun')
+				{
+					XComAddAnimSets(SpeciesTuple.ShotgunAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == 'cannon')
+				{
+					XComAddAnimSets(SpeciesTuple.CannonAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == 'psiamp')
+				{
+					XComAddAnimSets(SpeciesTuple.PsiampAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == 'pistol')
+				{
+					XComAddAnimSets(SpeciesTuple.PistolAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == 'gremlin')
+				{
+					XComAddAnimSets(SpeciesTuple.GremlinAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == 'grenade_launcher')
+				{
+					XComAddAnimSets(SpeciesTuple.LauncherAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == 'grenade')
+				{
+					XComAddAnimSets(SpeciesTuple.GrenadeAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == 'utility')
+				{
+					XComAddAnimSets(SpeciesTuple.GrenadeAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == class'X2Item_DefaultUtilityItems'.default.MedikitCat && SpeciesTuple.NeedsMedikitAnimset)
+				{
+					XComAddAnimSets(SpeciesTuple.MediKitAnimset);
+					GaveAnim = true;
+				}
+
+				if(WeaponTemplate.WeaponCat == 'heavy')
+				{
+					XComAddAnimSets(SpeciesTuple.HeavyAnimset);
+					GaveAnim = true;
+				}
+
+				if(!GaveAnim)
+				{
+					XComAddAnimSets(currentWeapon.CustomUnitPawnAnimsets); //this is to prevent the game from hanging in case of custom weapons
+				}
+			}
