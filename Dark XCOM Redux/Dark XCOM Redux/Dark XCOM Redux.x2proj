@@ -1,0 +1,241 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Default" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Guid>7407c17c-2531-4f5f-b27f-ab40aaa8b1a3</Guid>
+    <Name>Dark XCOM Redux</Name>
+    <Description>Because yet another enemy that can muck up your strategic objectives wasn't enough.</Description>
+    <SteamPublishID>0</SteamPublishID>
+    <AssemblyName>Dark XCOM Redux</AssemblyName>
+    <RootNamespace>Dark XCOM Redux</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Config\" />
+    <Folder Include="Localization\" />
+    <Folder Include="Content" />
+    <Folder Include="Src\" />
+    <Folder Include="Src\DarkXCOMRedux\" />
+    <Folder Include="Src\DarkXCOMRedux\Classes\" />
+    <Folder Include="Src\LW_Tuple" />
+    <Folder Include="Src\LW_Tuple\Classes" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config\XComAI.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComContent.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComDarkClassData.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComDarkXCom.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComEncounterLists.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComEncyclopedia.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComGameBoard.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComGameCore.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComGameData.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComGameData_CharacterStats.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComGameData_WeaponData.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComMaps.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComMissionDefs.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComMissions.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComMissionSources.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComModAchievementSystem.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComParcels.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Config\XComPlots.ini">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\LWAccessories_CG.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\LWAssaultRifle_CG.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\LWCannon_CG.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\LWPistol_CG.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\LWShotgun_CG.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\LWSMG_BM.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\LWSMG_CG.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\LWSniperRifle_CG.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\md_MOCXSabotage_01.umap">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\MOCX_NewAdventWeapons.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Obj_DarkOffsiteFacility.umap">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Obj_HackWorkstationMOCX.umap">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Obj_SabotageMOCX.umap">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Plot_MOCXRFT_01.umap">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\Plot_MOCXRFT_02.umap">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\UILibrary_LW_Coilguns.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\UILibrary_MOCX.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Content\UILibrary_SMG.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="ReadMe.txt" />
+    <Content Include="ModPreview.jpg" />
+    <Content Include="Config\XComEditor.ini" />
+    <Content Include="Config\XComEngine.ini" />
+    <Content Include="Config\XComGame.ini" />
+    <Content Include="Localization\XComGame.int" />
+    <Content Include="Src\DarkXCOMRedux\Classes\RM_Effect_UseGrenadeLauncher.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\RM_XComGameState_TriggerObj.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\UIMission_MOCXPath.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\UIScreenListener_DarkEvents.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\UIScreenListener_EndOfMonth.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\UIScreenListener_StrategyMap.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\UIScreenListener_TacticalStart.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\UnitDarkXComUtils.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2AbilitySet_DarkXCom.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2AIBT_DarkXCOM_Conditions.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2Character_DarkXCom.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2Condition_DarkEvac.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2Condition_MimeticSkin.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2DarkSoldierClassModTemplates.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2DarkSoldierClassTemplate.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2DownloadableContentInfo_DarkXCOMRedux.uc" />
+    <Content Include="Src\DarkXCOMRedux\Classes\X2Effect_DarkEvac.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2Effect_FakeBleedout.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2EventListener_MOCXTraits.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2EventListener_MOCX_AbilityPoints.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2Item_DarkXComWeapons.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2Item_MOCXChips.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2MissionNarrative_DarkNarrativeSet.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2MissionSet_Dark.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2Sitrep_MOCXSitrepEffects.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2StrategyElement_DarkActivities.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2StrategyElement_MOCXDarkEvents.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2StrategyElement_MOCXMissionSources.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2StrategyElement_MOCXRewards.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2StrategyElement_MOCXTechs.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\XComGameState_HeadquartersDarkXCom.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\XComGameState_MissionSite_MOCX.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\XComGameState_Unit_DarkXComInfo.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\XGCharacterGenerator_DarkXCom.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\LW_Tuple\Classes\LWTuple.uc">
+      <SubType>Content</SubType>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildLocalExtensionPath)\XCOM2.targets" />
+</Project>
