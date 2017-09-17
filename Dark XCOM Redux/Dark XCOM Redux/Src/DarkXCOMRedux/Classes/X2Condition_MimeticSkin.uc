@@ -11,11 +11,11 @@ class X2Condition_MimeticSkin extends X2Condition;
 event name CallMeetsCondition(XComGameState_BaseObject kTarget) 
 { 
 	local XComGameState_Unit UnitState;
-	local GameRulesCache_VisibilityInfo VisibilityInfo;
-	local X2GameRulesetVisibilityManager VisibilityMgr;
+	//local GameRulesCache_VisibilityInfo VisibilityInfo;
+	//local X2GameRulesetVisibilityManager VisibilityMgr;
 
 	UnitState = XComGameState_Unit(kTarget);
-	VisibilityMgr = `TACTICALRULES.VisibilityMgr;
+	//VisibilityMgr = `TACTICALRULES.VisibilityMgr;
 
 	if (UnitState == none)
 		return 'AA_NotAUnit';

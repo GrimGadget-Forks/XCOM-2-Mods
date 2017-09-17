@@ -103,6 +103,9 @@
     <Content Include="Content\MOCX_NewAdventWeapons.upk">
       <SubType>Content</SubType>
     </Content>
+    <Content Include="Content\MOCX_Photobooth.upk">
+      <SubType>Content</SubType>
+    </Content>
     <Content Include="Content\Obj_DarkOffsiteFacility.umap">
       <SubType>Content</SubType>
     </Content>
@@ -125,6 +128,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Content\UILibrary_SMG.upk">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Localization\DarkXCOMRedux.int">
       <SubType>Content</SubType>
     </Content>
     <Content Include="ReadMe.txt" />
@@ -201,6 +207,9 @@
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\DarkXCOMRedux\Classes\X2MissionSet_Dark.uc">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Src\DarkXCOMRedux\Classes\X2Photobooth_MOCXStrategyAutoGen.uc">
       <SubType>Content</SubType>
     </Content>
     <Content Include="Src\DarkXCOMRedux\Classes\X2Sitrep_MOCXSitrepEffects.uc">

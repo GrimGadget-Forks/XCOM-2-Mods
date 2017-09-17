@@ -1,5 +1,5 @@
-class UIScreenListener_TacticalStart extends UIScreenListener config (DarkXCom);
-
+class UIScreenListener_TacticalStart extends UIScreenListener config (DarkXCom) deprecated;
+/*
 struct AdditionalAbilityNames
 {
 	var name AbilityName;
@@ -495,7 +495,7 @@ function bool EnsureAWCAbilityOnUnit(XComGameState NewGameState, XComGameState_U
 
 	return true;
 }
-
+*/
 defaultproperties
 {
 	// Leave this none so it can be triggered anywhere, gate inside the OnInit

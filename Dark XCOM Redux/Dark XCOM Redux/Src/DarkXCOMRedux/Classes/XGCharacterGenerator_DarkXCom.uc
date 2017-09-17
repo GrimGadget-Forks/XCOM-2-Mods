@@ -436,7 +436,6 @@ function array<XComGameState_Unit> GetCharPoolCandidates(X2CharacterTemplate Tem
 
 function bool Filter(XComGameState_Unit Unit, X2CharacterTemplate CharacterTemplate)
 {
-	local int idx;
 	// bugfix for CharacterPoolManager, allow human characters to be anything
 	if(Unit.GetMyTemplateName() != 'Soldier' && Unit.GetMyTemplateName() != CharacterTemplate.DataName)
 		return false;

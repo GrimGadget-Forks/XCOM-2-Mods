@@ -4,7 +4,7 @@ event name CallMeetsConditionWithSource(XComGameState_BaseObject kTarget, XComGa
 {
 	local XComGameState_Unit UnitState, OtherUnit;
 	local array<XComGameState_Unit> AllUnits;
-	local XComGameState_Effect EffectState;
+	//local XComGameState_Effect EffectState;
 	local int DeadCount, OriginalCount;
 	local float CurrentHP, MaxHP;
 	local bool CanEvac;

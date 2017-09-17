@@ -26,6 +26,11 @@ var bool							bTrainingDone; //completed training raid mission
 var bool							bSITREPActive; //we got a SITREP active, don't roll again. Set this to false every time we do a mission: forced SITREPs on missions should be unaffected.
 var int								NumOfMissionsSITREPActive; //this is a failsafe measure: if we pass X amount of missions then we should assume we should stop assuming the SITREP is active.
 
+// last mission info, set from OnPostMission. Needed for PhotoboothInfo
+// This is XCOM-centric. It records whether MOCX was active in the last mission XCOM did, and if so, with what squad
+var bool							LastMission_bWasActive;
+var array<StateObjectReference>		LastMission_Squad;
+
 var int								ChanceToRoll; //current chance for MOCX to appear on a mission
 var int								NumSinceAppearance; //how many missions have passed since last appearance?
 var int								HighestSoldierRank;
@@ -628,14 +633,16 @@ function FillSquad(XcomGameState NewGameState)
 
 		if(InfoState != none)
 		{
-		NewInfoState = XComGameState_Unit_DarkXComInfo(NewGameState.CreateStateObject(class'XComGameState_Unit_DarkXComInfo', InfoState.ObjectID));
-		NewGameState.AddStateObject(NewInfoState);
+			NewInfoState = XComGameState_Unit_DarkXComInfo(NewGameState.CreateStateObject(class'XComGameState_Unit_DarkXComInfo', InfoState.ObjectID));
+			NewGameState.AddStateObject(NewInfoState);
 
 			if(NewInfoState.bIsAlive && NewInfoState.GetRecoveryPoints() <= 0 && !NewInfoState.bInSquad) //is alive and is done healing
 			{
 			`log("Added following MOCX soldier to squad: " $ class'UnitDarkXComUtils'.static.GetFullName(Unit), ,'DarkXCom');
 				Squad.AddItem(Crew[i]);
 				NewInfoState.bInSquad = true;
+				NewInfoState.bAlreadyHandled = false;
+				NewInfoState.AssignedUnit.ObjectID = -1;
 			}
 		}
 
@@ -678,12 +685,15 @@ function UpdateSpawningData(XComGameState NewGameState, XComGameState_MissionSit
 	local XComGameState_Unit_DarkXComInfo InfoState;
 	local array<Name> NamesToAdd;
 	local float AlongLOP, FromLOP;
-	local XComGameState_BattleData BattleData;
-	local XComGameStateHistory History;
 
-	History = `XCOMHISTORY;
+	local int iNumSld;
+	local string strTechTierSuffix;
+
+	iNumSld = Clamp(GetMaxSquadSize(), 2, 10);
+	EncounterInfo.EncounterID = name("MOCX_Teamx" $ iNumSld);
 
 
+/*
 	EncounterInfo.EncounterID='MOCX_Teamx4';
 
 	if(Squad.Length <= 2)
@@ -709,7 +719,7 @@ function UpdateSpawningData(XComGameState NewGameState, XComGameState_MissionSit
 
 	if(Squad.Length >= 10)
 		EncounterInfo.EncounterID='MOCX_Teamx10';
-
+*/
 
 	AlongLOP = `SYNC_RAND(15) - `SYNC_RAND(9);
 	FromLOP = `SYNC_RAND(15) - `SYNC_RAND(9);
@@ -728,14 +738,25 @@ function UpdateSpawningData(XComGameState NewGameState, XComGameState_MissionSit
 
 	if(bAdvancedMECs)
 	{
-	i = `SYNC_RAND(100);
+		i = `SYNC_RAND(100);
 		if(i <= AdvancedMECChance)
 		{
-		NamesToAdd.AddItem('AdvMec_MOCX');
+			NamesToAdd.AddItem('AdvMec_MOCX');
 		}
 
 	}
+	strTechTierSuffix = GetTierSuffixFromTech();
+	`log("Dark XCom: we are at tier " $ strTechTierSuffix, ,'DarkXCom');
+	for(i = 0; i < GetCurrentSquadSize(); i++)
+	{
+		Unit = XComGameState_Unit(`XCOMHISTORY.GetGameStateForObjectID(Squad[i].ObjectID));
+		InfoState = class'UnitDarkXComUtils'.static.GetDarkXComComponent(Unit);
 
+		`log("Dark XCom: found soldier class - " $ InfoState.GetClassName(), ,'DarkXCom');
+		// mocx soldier templates upgrade their equipment via tech
+		NamesToAdd.AddItem(name(InfoState.GetClassName() $ strTechTierSuffix));
+	}
+/*
 	if(!bHasCoil)
 	{
 		for(i = 0; i < GetCurrentSquadSize(); i++)
@@ -772,7 +793,7 @@ function UpdateSpawningData(XComGameState NewGameState, XComGameState_MissionSit
 		}
 	}
 
-
+*/
 	if(NamesToAdd.Length < GetMaxSquadSize())
 	{
 		for(i = NamesToAdd.Length; i < GetMaxSquadSize(); i++)
@@ -849,7 +870,14 @@ function SpawnSquad(XComGameState NewGameState, XComGameState_MissionSite Missio
 	local array<Name> NamesToAdd;
 	local float AlongLOP, FromLOP;
 	local array<XComGameState_Unit> CurrentSquad;
-	EncounterInfo.EncounterID='MOCX_Teamx4';
+
+	local int iNumSld;
+	local string strTechTierSuffix;
+
+	iNumSld = Clamp(GetMaxSquadSize(), 2, 10);
+	EncounterInfo.EncounterID = name("MOCX_Teamx" $ iNumSld);
+
+/*	EncounterInfo.EncounterID='MOCX_Teamx4';
 
 	if(GetMaxSquadSize() <= 2)
 		EncounterInfo.EncounterID='MOCX_Teamx2';
@@ -873,7 +901,7 @@ function SpawnSquad(XComGameState NewGameState, XComGameState_MissionSite Missio
 		EncounterInfo.EncounterID='MOCX_Teamx9';
 
 	if(GetMaxSquadSize() >= 10)
-		EncounterInfo.EncounterID='MOCX_Teamx10';
+		EncounterInfo.EncounterID='MOCX_Teamx10';*/
 
 
 	AlongLOP = `SYNC_RAND(15) - `SYNC_RAND(9);
@@ -896,15 +924,25 @@ function SpawnSquad(XComGameState NewGameState, XComGameState_MissionSite Missio
 
 	if(bAdvancedMECs)
 	{
-	i = `SYNC_RAND(100);
-		if(i <= AdvancedMECChance)
+		i = `SYNC_RAND(100);
+		if(i < AdvancedMECChance)
 		{
-		NamesToAdd.AddItem('AdvMec_MOCX');
+			NamesToAdd.AddItem('AdvMec_MOCX');
 		}
-
 	}
 
-	if(!bHasCoil)
+	strTechTierSuffix = GetTierSuffixFromTech();
+	`log("Dark XCom: we are at tier " $ strTechTierSuffix, ,'DarkXCom');
+	for(i = 0; i < CurrentSquad.Length; i++)
+	{
+		Unit = CurrentSquad[i];
+		InfoState = class'UnitDarkXComUtils'.static.GetDarkXComComponent(Unit);
+
+		`log("Dark XCom: found soldier class - " $ InfoState.GetClassName(), ,'DarkXCom');
+		// mocx soldier templates upgrade their equipment via tech
+		NamesToAdd.AddItem(name(InfoState.GetClassName() $ strTechTierSuffix));
+	}
+/*	if(!bHasCoil)
 	{
 		for(i = 0; i < CurrentSquad.Length; i++)
 		{
@@ -938,7 +976,7 @@ function SpawnSquad(XComGameState NewGameState, XComGameState_MissionSite Missio
 			`log("Dark XCom: found soldier class - " $ InfoState.GetClassName(), ,'DarkXCom');
 			NamesToAdd.AddItem(name(InfoState.GetClassName() $ "_M3"));
 		}
-	}
+	}*/
 
 	Encounter.ForceSpawnTemplateNames = NamesToAdd;
 	Encounter.TeamToSpawnInto = eTeam_Alien;
@@ -975,6 +1013,16 @@ function SpawnSquad(XComGameState NewGameState, XComGameState_MissionSite Missio
 
 	MissionState.SelectedMissionData.SelectedEncounters.AddItem(NewEncounter);
 
+}
+
+function string GetTierSuffixFromTech()
+{
+	if (bHasPlasma)
+		return "_M3";
+	else if (bHasCoil)
+		return "_M2";
+	else
+		return "";
 }
 
 
