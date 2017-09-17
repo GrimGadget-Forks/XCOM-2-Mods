@@ -42,7 +42,7 @@ function RollForSitrep(UIScreen Screen)
 	local int RandomRoll;
 	local XComGameState_MissionSite MissionState;
 	local XComGameState NewGameState;
-	local GeneratedMissionData MissionData;
+	//local GeneratedMissionData MissionData;
 	local XComGameState_HeadquartersXCom	XComHQ; //because the game stores a copy of mission data and this is where its stored in
 
 	if(IsInvalidScreen(Screen))

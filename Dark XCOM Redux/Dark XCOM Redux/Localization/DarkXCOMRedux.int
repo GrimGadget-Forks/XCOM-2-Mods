@@ -1,0 +1,17 @@
+[X2DownloadableContentInfo_DarkXCOMRedux]
+m_arrBackgroundOptions[0]=(BackgroundDisplayName="MOCX")
+
+[X2Photobooth_MOCXStrategyAutoGen]
+UnitWithKillsStrings[0]="Killed %KILLS Terrorists"
+
+
+SquadDefeatedStrings1[0]="Victims of the 'Resistance'"
+SquadDefeatedStrings1[1]="XCOM's cruelty knows no limits"
+SquadDefeatedStrings2[0]="We will always remember them"
+SquadDefeatedStrings2[1]="Honor their sacrifice"
+
+
+SquadVictoriousStrings1[0]="Resist the 'Resistance'!"
+SquadVictoriousStrings1[1]="An impenetrable defense!"
+SquadVictoriousStrings2[0]="The Initiative protects us"
+SquadVictoriousStrings2[1]="The Initiative keeps us safe"

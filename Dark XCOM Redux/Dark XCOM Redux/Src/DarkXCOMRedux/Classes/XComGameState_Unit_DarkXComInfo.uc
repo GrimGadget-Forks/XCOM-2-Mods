@@ -26,6 +26,8 @@ var bool bCosmeticDone; //has the soldier's looks already been used?
 var int MonthsInService; //how long has this soldier been active?
 var int MonthsSinceLastPromotion; //when was the last time this soldier got promoted?
 
+var array<StateObjectReference> KilledXCOMUnits; // keeps track of how many XCOM units this soldier has killed. added to in OnPostMission
+
 //config variables
 var config int PromotionThreshold; //how many months does it take for a soldier to promote?
 
@@ -104,6 +106,22 @@ function array<name> GetBonusAbilities()
 	}
 
 	return ArrayToSend;
+}
+
+
+function array<SoldierClassAbilityType> GetUnitEarnedSoldierAbilities()
+{
+	local int i;
+	local array<SoldierClassAbilityType> Abilities;
+	for (i = 0; i < SoldierAbilities.Length; i++)
+	{
+		Abilities.AddItem(SoldierAbilities[i]);
+	}
+	for (i = 0; i < AWCAbilities.Length; i++)
+	{
+		Abilities.AddItem(SoldierAbilities[i]);
+	}
+	return Abilities;
 }
 
 function AddBonusAbility(SoldierClassAbilityType AWCAbility)

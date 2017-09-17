@@ -29,15 +29,15 @@ static protected function EventListenerReturn OnUnitTookDamage(Object EventData,
 {
 	local XComGameState_Unit DamagedUnit;
 	local XComGameState_Unit SourceUnit; // unit that caused the damage
-	local XComGameState_Unit OtherUnit;
+	//local XComGameState_Unit OtherUnit;
 	local X2CharacterTemplate SourceUnitTemplate;
 	local XComGameStateContext_Ability AbilityContext;
-	local DamageResult LastDamageResult;
-	local XComGameStateHistory History;
-	local XComGameState_HeadquartersXCom XComHQ;
-	local StateObjectReference SquadMemberRef;
-	local X2TraitTemplate Template;
-	local XComGameStateContext_WillRoll WillRollContext;
+	//local DamageResult LastDamageResult;
+	//local XComGameStateHistory History;
+	//local XComGameState_HeadquartersXCom XComHQ;
+	//local StateObjectReference SquadMemberRef;
+	//local X2TraitTemplate Template;
+	//local XComGameStateContext_WillRoll WillRollContext;
 
 	DamagedUnit = XComGameState_Unit(EventData);
 
@@ -62,8 +62,8 @@ static protected function EventListenerReturn OnUnitTookDamage(Object EventData,
 		return ELR_NoInterrupt; 
 	}
 
-	History = `XCOMHISTORY;
-	XComHQ = XComGameState_HeadquartersXCom(History.GetSingleGameStateObjectForClass(class'XComGameState_HeadquartersXCom'));
+	//History = `XCOMHISTORY;
+	//XComHQ = XComGameState_HeadquartersXCom(History.GetSingleGameStateObjectForClass(class'XComGameState_HeadquartersXCom'));
 	SourceUnitTemplate = SourceUnit.GetMyTemplate();
 
 	if(SourceUnitTemplate.CharacterGroupName == 'DarkXComSoldier' && !DamagedUnit.HasTrait('FearOfMOCX') )

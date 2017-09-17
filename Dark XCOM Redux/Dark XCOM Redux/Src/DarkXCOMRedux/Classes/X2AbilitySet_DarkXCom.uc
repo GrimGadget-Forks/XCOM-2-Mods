@@ -240,8 +240,8 @@ static function X2DataTemplate CreateVanishReveal()
 static function EventListenerReturn WasHostileAction(Object EventData, Object EventSource, XComGameState GameState, Name Event, Object CallbackData)
 {
 	local XComGameStateHistory History;
-	local XComGameStateContext_Ability AbilityContext;
-	local XComGameState NewGameState;
+	//local XComGameStateContext_Ability AbilityContext;
+	//local XComGameState NewGameState;
 	local XComGameState_Ability AbilityState, VanishState;
 	local X2AbilityTemplate AbilityTemplate;
 	local XComGameState_Unit SourceUnit;
@@ -249,19 +249,10 @@ static function EventListenerReturn WasHostileAction(Object EventData, Object Ev
 
 	History = `XCOMHISTORY;
 
-	//
-	//`assert(SourceUnit != none);
-//
-	//;
-	//`assert(AbilityState != none);
-//
-	//;
-	//`assert(AbilityTemplate != none);
-
 	SourceUnit = XComGameState_Unit(EventSource);
 	AbilityState = XComGameState_Ability(EventData);
 	AbilityTemplate = AbilityState.GetMyTemplate();
-	AbilityContext = XComGameStateContext_Ability(GameState.GetContext().GetFirstStateInEventChain().GetContext());
+	//AbilityContext = XComGameStateContext_Ability(GameState.GetContext().GetFirstStateInEventChain().GetContext());
 	if(AbilityTemplate == none || AbilityTemplate.Hostility != eHostility_Offensive)
 	{
 		//wasn't offensive, ignore
@@ -284,8 +275,8 @@ static function EventListenerReturn WasHostileAction(Object EventData, Object Ev
 static function X2DataTemplate CreateStartVanish()
 {
 	local X2AbilityTemplate Template;
-	local X2AbilityCost_ActionPoints ActionPointCost;
-	local X2AbilityCooldown_LocalAndGlobal Cooldown;
+	//local X2AbilityCost_ActionPoints ActionPointCost;
+	//local X2AbilityCooldown_LocalAndGlobal Cooldown;
 	local X2Effect_RemoveEffects RemoveEffects;
 	local X2Effect_Vanish VanishEffect;
 
@@ -497,8 +488,8 @@ simulated function DarkEvac_BuildVisualization(XComGameState VisualizeGameState)
 {
 	local XComGameStateContext_Ability Context;
 	local XComGameStateHistory History;
-	local VisualizationActionMetadata EmptyTrack, SpawnedUnitTrack, DeadUnitTrack;
-	local XComGameState_Unit SpawnedUnit, DeadUnit;
+	local VisualizationActionMetadata EmptyTrack, DeadUnitTrack;
+	local XComGameState_Unit DeadUnit;
 	local XComContentManager ContentManager;
 	local TTile SpawnedUnitTile;
 	local X2Action_PlayEffect PsiWarpInEffectAction;
@@ -779,7 +770,7 @@ static function X2DataTemplate CreateFakeBleedoutTrigger()
 static function BleedoutFn(X2Effect_Persistent PersistentEffect, const out EffectAppliedData ApplyEffectParameters, XComGameState NewGameState, bool bCleansed)
 {
 	local XComGameState_Unit TargetUnit;
-	local X2EventManager EventManager;
+	//local X2EventManager EventManager;
 	local int KillAmount;
 
 
@@ -869,7 +860,7 @@ function name IntimidationApplyChance(const out EffectAppliedData ApplyEffectPar
 	local XComGameState_Unit TargetUnit, SourceUnit;
 	local name ImmuneName;
 	local int AttackVal, DefendVal, TargetRoll, RandRoll;
-	local XComGameState_Item ArmorState;
+	//local XComGameState_Item ArmorState;
 
 	SourceUnit = XComGameState_Unit(NewGameState.GetGameStateForObjectID(ApplyEffectParameters.SourceStateObjectRef.ObjectID));
 
@@ -923,9 +914,9 @@ static function X2AbilityTemplate CreateMimeticSkin()
 {
 	local X2AbilityTemplate						Template;
 	local X2Effect_RangerStealth                StealthEffect;
-	local X2AbilityCharges                      Charges;
+	//local X2AbilityCharges                      Charges;
 	local X2AbilityTrigger_EventListener    EventTrigger;
-	local X2Condition_Visibility            CoverCondition;
+	//local X2Condition_Visibility            CoverCondition;
 
 
 	`CREATE_X2ABILITY_TEMPLATE(Template, 'RM_MimeticSkin');

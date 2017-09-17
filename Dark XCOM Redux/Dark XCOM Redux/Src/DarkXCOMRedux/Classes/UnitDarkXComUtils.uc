@@ -60,9 +60,9 @@ static function RemoveFromSquad(XComGameState_HeadquartersDarkXCom DarkXComHQ, S
 
 	If(!DarkInfoState.bIsAlive)
 	{
-	`log("Dark XCOM: Soldier has died, removing from HQ's active crew.", ,'DarkXCom');
-	DarkXComHq.DeadCrew.AddItem(ReferenceToRemove);
-	DarkXComHQ.Crew.RemoveItem(ReferenceToRemove);
+		`log("Dark XCOM: Soldier has died, removing from HQ's active crew.", ,'DarkXCom');
+		DarkXComHq.DeadCrew.AddItem(ReferenceToRemove);
+		DarkXComHQ.Crew.RemoveItem(ReferenceToRemove);
 	}
 
 }
@@ -88,7 +88,7 @@ static function bool IsAlive(XComGameState_Unit Unit )
 static function GiveAWCAbility(XComGameState_Unit_DarkXComInfo DarkInfoState)
 {
 	local array<name> ValidAbilities, CurrentAbilities, ExcludedAbilities;
-	local name AbilityCheck, AbilityToSend;
+	local name AbilityToSend;
 	local int i, k;
 	local SoldierClassAbilityType CurrentAbility;
 	local X2DarkSoldierClassTemplate Template;
@@ -99,14 +99,13 @@ static function GiveAWCAbility(XComGameState_Unit_DarkXComInfo DarkInfoState)
 
 	if(CurrentAbilities.Length >= default.AWCLimit)
 	{
-	`log("Dark XCom: Soldier has already hit maximum number of AWC abilities.", ,'DarkXCom');
-	return;
+		`log("Dark XCom: Soldier has already hit maximum number of AWC abilities.", ,'DarkXCom');
+		return;
 	}
 	
 	foreach default.AWCAbilities(CurrentAbility)
 	{
 		ValidAbilities.AddItem(CurrentAbility.AbilityName);
-
 	}
 	ExcludedAbilities = Template.ExcludedAbilities;
 
@@ -117,10 +116,9 @@ static function GiveAWCAbility(XComGameState_Unit_DarkXComInfo DarkInfoState)
 		{
 			if(ExcludedAbilities[i] == ValidAbilities[k])
 			{
-			ValidAbilities.RemoveItem( ValidAbilities[k]);
-			break;
+				ValidAbilities.RemoveItem( ValidAbilities[k]);
+				break;
 			}
-
 		}
 	}
 
@@ -130,8 +128,8 @@ static function GiveAWCAbility(XComGameState_Unit_DarkXComInfo DarkInfoState)
 		{
 			if(CurrentAbilities[i] == ValidAbilities[k])
 			{
-			ValidAbilities.RemoveItem( ValidAbilities[k]);
-			break;
+				ValidAbilities.RemoveItem( ValidAbilities[k]);
+				break;
 			}
 
 		}
@@ -151,10 +149,19 @@ static function GiveAWCAbility(XComGameState_Unit_DarkXComInfo DarkInfoState)
 	}
 }
 
-static function XComGameState_Unit_DarkXComInfo GetDarkXComComponent(XComGameState_Unit Unit)
+static function XComGameState_Unit_DarkXComInfo GetDarkXComComponent(XComGameState_Unit Unit, optional XComGameState CheckGameState)
 {
+	local XComGameState_BaseObject TempObj;
 	if (Unit != none)
 	{
+		if (CheckGameState != none)
+		{
+			TempObj = CheckGameState.GetGameStateComponentForObjectID(Unit.GetReference().ObjectID, class'XComGameState_Unit_DarkXComInfo');
+			if (TempObj != none)
+			{
+				return XComGameState_Unit_DarkXComInfo(TempObj);
+			}
+		}
 		return XComGameState_Unit_DarkXComInfo(Unit.FindComponentObject(class'XComGameState_Unit_DarkXComInfo'));
 	}
 	return none;
