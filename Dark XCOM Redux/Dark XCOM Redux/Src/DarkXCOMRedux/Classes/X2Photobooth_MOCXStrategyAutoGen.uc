@@ -204,6 +204,14 @@ event Tick(float fDeltaTime)
 	super.Tick(fDeltaTime);
 	if (bWatching)
 	{
+
+		if (`PHOTOBOOTH.AutoGenSettings.CampaignID == -1)
+		{
+			// we were interrupted -- stop
+			ExecutingPhotoboothTypeInfo = default.ExecutingPhotoboothTypeInfo;
+			bWatching = false;
+			return;
+		}
 		`log("Dark XCom: State" @ GetEnum(Enum'AutoGenCaptureState', `PHOTOBOOTH.m_kAutoGenCaptureState), ,'DarkXCom');
 		`log("Dark XCom: watiting for" @ GetEnum(Enum'AutoGenCaptureState', NextAutoGenState), ,'DarkXCom');
 		if ((`PHOTOBOOTH.m_kAutoGenCaptureState - 1) == NextAutoGenState)
